@@ -1,8 +1,9 @@
 import { Request, Response } from 'express';
+import { CONFIG } from '../config/vars';
 import User from '../models/users';
 import jwt from 'jsonwebtoken';
 
-const JWT_SECRET = 'your_jwt_secret'; // Replace with an environment variable in production
+const JWT_SECRET = CONFIG['jwtSecToken'];
 
 export const register = async (req: Request, res: Response) => {
   const { username, email, password } = req.body;

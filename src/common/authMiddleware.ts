@@ -1,7 +1,8 @@
 import { Request, Response, NextFunction } from 'express';
+import { CONFIG } from '../config/vars';
 import jwt from 'jsonwebtoken';
 
-const JWT_SECRET = 'your_jwt_secret'; // Replace with an environment variable in production
+const JWT_SECRET = CONFIG['jwtSecToken'];
 
 export const authenticate = (req: any, res: Response, next: NextFunction) => {
   const token = req.headers['authorization']?.split(' ')[1];

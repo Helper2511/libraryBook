@@ -2,9 +2,6 @@ import express from 'express';
 import sequelize from './common/connection';
 import authRoutes from './routes/user';
 import bookRoutes from './routes/book';
-// import dotenv from 'dotenv';
-
-// dotenv.config();
 
 const app = express();
 const port = 3000;

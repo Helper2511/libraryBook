@@ -1,8 +1,8 @@
 import { Sequelize } from 'sequelize';
+import { CONFIG } from '../config/vars';
 
-// Replace these with your actual database credentials
-const sequelize = new Sequelize('libraryDb', 'root', 'password', {
-  host: 'localhost',
+const sequelize = new Sequelize(CONFIG['dbName'], CONFIG['dbUserName'], CONFIG['dbPassword'], {
+  host: CONFIG['dbHost'],
   dialect: 'mysql',
 });
 
